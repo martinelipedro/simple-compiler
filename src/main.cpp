@@ -3,7 +3,7 @@
 
 int main()
 {
-    Lexer lexer("var hello = hello");
+    Lexer lexer("var hello = hello;");
 
     for (Token* tok : lexer.get_tokens())
     {

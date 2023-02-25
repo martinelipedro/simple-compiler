@@ -5,8 +5,18 @@
 
 enum class TokenType
 {
+    /* */
     END = 0,
-    ID,
+
+    /* Primitive Types */
+    ID, String, Number, 
+
+
+    /* Assigment */
+    Equals, Colon,
+
+    /* Pontuation */
+    SemiColon, Comma
 };
 
 struct Token 
@@ -15,6 +25,7 @@ struct Token
     std::string value;
 
     Token(TokenType type, std::string& value) : type(type), value(value) {}
+    Token(TokenType type, char value) : type(type), value{value} {}
 };
 
 #endif

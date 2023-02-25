@@ -54,11 +54,16 @@ std::vector<Token*> Lexer::get_tokens()
                 break;
             }
 
+            case '=': token_list.push_back(new Token(TokenType::Equals, _current_char)); advance(); break;
+            case ':': token_list.push_back(new Token(TokenType::Colon, _current_char)); advance(); break;
+            case ';': token_list.push_back(new Token(TokenType::SemiColon, _current_char)); advance(); break;
+            case ',': token_list.push_back(new Token(TokenType::Comma, _current_char)); advance(); break;
+
             default: advance(); break;
         }
     }
 
-
+    token_list.push_back(new Token(TokenType::END, '\0'));
     return token_list;
 }
 
