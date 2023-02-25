@@ -13,6 +13,8 @@ private:
 public:
     TokenManager(std::vector<Token*> token_list);
 
+    void print() const;
+
     // Returns the current token and advance
     Token* advance();
     Token* previous();

@@ -9,6 +9,14 @@ TokenManager::TokenManager(std::vector<Token*> token_list) : token_list(token_li
 
 // Public members.
 
+void TokenManager::print() const
+{   
+    for (Token* tok: token_list)
+    {
+        tok->out();
+    }
+}
+
 Token* TokenManager::advance()
 {
     Token* return_token = current_token;

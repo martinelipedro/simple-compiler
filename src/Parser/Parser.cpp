@@ -12,6 +12,6 @@ Token* Parser::eat(TokenType type)
         return tokens.advance();
     }
 
-    std::cerr << "[ Parser.eat ] Expected token of type: " << static_cast<int>(type) << ". But found: " << static_cast<int>(type) << ".\n";
+    std::cerr << "[ Parser.eat ] Expected token of type: " << static_cast<int>(type) << ". But found: " << static_cast<int>(tokens.current()->type) << ".\n";
     exit(1);
 }
