@@ -1,9 +1,7 @@
 #ifndef LEXER_HPP
 #define LEXER_HPP
 
-#include "../Token/Token.hpp"
-
-#include <vector>
+#include "../TokenManager/TokenManager.hpp"
 #include <string_view>
 
 class Lexer
