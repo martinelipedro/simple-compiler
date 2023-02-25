@@ -35,5 +35,23 @@ public:
     : op(op), LHS(std::move(LHS)), RHS(std::move(RHS)) {}
 };
 
+class VariableExprAST : public ExprAST
+{
+public:
+    std::string name;
+
+    VariableExprAST(const std::string& name) : name(name) {}
+};
+
+class FunctionCallExprAST : public ExprAST
+{
+public:
+    std::string function_name;
+    std::vector<std::unique_ptr<ExprAST>> args;
+
+    FunctionCallExprAST(const std::string& function_name, std::vector<std::unique_ptr<ExprAST>> args) 
+    : function_name(function_name), args(std::move(args)) {}
+};
+
 
 #endif
