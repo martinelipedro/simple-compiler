@@ -6,7 +6,7 @@
 enum class TokenType
 {
     /* */
-    END = 0,
+    END = 0, None,
 
     /* Primitive Types */
     ID, String, Number, 

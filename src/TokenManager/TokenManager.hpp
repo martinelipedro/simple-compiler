@@ -12,6 +12,12 @@ private:
     Token* current_token;
 public:
     TokenManager(std::vector<Token*> token_list);
+
+    // Returns the current token and advance
+    Token* advance();
+    Token* previous();
+    Token* current();
+    Token* next();
 };
 
 #endif
