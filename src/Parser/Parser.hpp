@@ -10,7 +10,6 @@ private:
     TokenManager tokens;
 public:
     Parser(TokenManager tokens);
-
     Token* eat(TokenType type);
 };
 

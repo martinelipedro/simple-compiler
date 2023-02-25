@@ -8,7 +8,7 @@ OBJECTS = $(SOURCES:%=$(BUILD_DIR)/%.o)
 
 CXX = g++
 CFLAGS = -std=c++20
-LDFLAGS = 
+LDFLAGS = -L/usr/lib/llvm-14/lib
 
 $(BUILD_DIR)/$(EXEC): $(OBJECTS) 
 	$(CXX) $^ -o $@ $(LDFLAGS)
