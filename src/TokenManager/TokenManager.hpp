@@ -7,11 +7,11 @@
 class TokenManager
 {
 private:
-    std::vector<Token>& token_list;
+    std::vector<Token*> token_list;
     unsigned int current_token_index;
     Token* current_token;
 public:
-    TokenManager(std::vector<Token>& token_list);
+    TokenManager(std::vector<Token*> token_list);
 };
 
 #endif
