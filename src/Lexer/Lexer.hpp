@@ -15,6 +15,7 @@ public:
     Lexer(const std::string& source);
 
     Token* collect_id();
+    Token* collect_string();
 
     std::vector<Token*> get_tokens();
     TokenManager get_token_manager();

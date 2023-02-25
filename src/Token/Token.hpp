@@ -1,7 +1,9 @@
 #ifndef TOKEN_HPP
 #define TOKEN_HPP
 
+#include <iostream>
 #include <string>
+
 
 enum class TokenType
 {
@@ -26,6 +28,11 @@ struct Token
 
     Token(TokenType type, std::string& value) : type(type), value(value) {}
     Token(TokenType type, char value) : type(type), value{value} {}
+
+    void out() const 
+    {
+        std::cout << "( " << static_cast<int>(type) << " : " << value << " )" << "\n";
+    }
 };
 
 #endif

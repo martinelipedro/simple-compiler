@@ -31,7 +31,22 @@ Token* Lexer::collect_id()
     return new Token(TokenType::ID, buffer);
 }
 
-#include <iostream>
+Token* Lexer::collect_string()
+{
+    std::string buffer;
+
+    advance();
+
+    while (_current_char != '\"')
+    {
+        buffer.push_back(_current_char);
+        advance();
+    }
+
+    advance();
+
+    return new Token(TokenType::String, buffer);
+}
 
 std::vector<Token*> Lexer::get_tokens()
 {
@@ -53,6 +68,8 @@ std::vector<Token*> Lexer::get_tokens()
                 advance();
                 break;
             }
+
+            case '\"': token_list.push_back(collect_string()); break;
 
             case '=': token_list.push_back(new Token(TokenType::Equals, _current_char)); advance(); break;
             case ':': token_list.push_back(new Token(TokenType::Colon, _current_char)); advance(); break;

@@ -3,11 +3,11 @@
 
 int main()
 {
-    Lexer lexer("var hello = hello;");
+    Lexer lexer("var hello = \"hello\";");
 
     for (Token* tok : lexer.get_tokens())
     {
-        std::cout << tok->value << '\n';
+        tok->out();
     }
 
     return 0;
